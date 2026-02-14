@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PharmacyElements from '../components/3d/PharmacyElements';
 import ClientElements from '../components/3d/ClientElements';
 import DataStream from '../components/animations/DataStream';
+import LivingBackground from '../components/animations/LivingBackground';
 import Navbar from '../components/Navbar';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
@@ -30,6 +31,7 @@ const LandingPage = () => {
 
                 {/* Left Side: Pharmacy */}
                 <div className="split-side pharmacy-side">
+                    <LivingBackground theme="pharmacy" />
                     <div className="content-wrapper">
                         <motion.div
                             className="text-content"
@@ -51,6 +53,7 @@ const LandingPage = () => {
 
                 {/* Right Side: Client */}
                 <div className="split-side client-side">
+                    <LivingBackground theme="client" />
                     <div className="content-wrapper">
                         <div className="visual-content">
                             <ClientElements />
