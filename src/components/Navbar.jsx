@@ -62,7 +62,7 @@ const Navbar = () => {
     }, [isLanding]);
 
     const navLinks = [
-        { name: 'Home', path: '/', id: 'home' },
+        { name: 'Home', path: '/#home', id: 'home' },
         { name: 'About', path: '/#about', id: 'about' }, // Smooth scroll anchor
         { name: 'Contact', path: '/#contact', id: 'contact' }, // Smooth scroll anchor
     ];

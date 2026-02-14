@@ -33,10 +33,10 @@ const Footer = () => {
                 <div className="footer-section links-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/#home">Home</Link></li>
+                        <li><Link to="/#about">About Us</Link></li>
+                        <li><Link to="/#services">Services</Link></li>
+                        <li><Link to="/#contact">Contact</Link></li>
                     </ul>
                 </div>
 
