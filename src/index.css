@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  /* New Palette */
+  --pharmacy-blue: #0A192F;
+  /* Deep Clinical Blue */
+  --pharmacy-accent: #38bdf8;
+  /* Cyan Glow */
+  --client-mint: #ecfdf5;
+  /* Soft Mint Background */
+  --client-accent: #10b981;
+  /* Emerald */
+  --bridge-glow: #fbbf24;
+  /* Warm Gold/Amber */
+
+  /* Text */
+  --text-on-dark: #f0f9ff;
+  --text-on-light: #0f172a;
+
+  /* 3D & Effects */
+  --perspective: 1200px;
+  --shadow-3d: 20px 20px 60px rgba(0, 0, 0, 0.3), -20px -20px 60px rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  /* More modern/tech feel */
+  /* overflow: hidden; Removed to allow scrolling */
+  background: #000;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.isometric-container {
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+}
