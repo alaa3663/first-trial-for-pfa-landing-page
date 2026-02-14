@@ -38,15 +38,24 @@ const ClientElements = () => {
                 </div>
             </motion.div>
 
-            {/* Floating Calendar Widget */}
+            {/* Calendar Icon */}
             <motion.div
-                className="iso-widget calendar-widget"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="floating-icon calendar"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
             >
-                <Calendar size={24} className="mb-2 text-emerald-600" />
-                <span>Next Refill</span>
-                <strong>Feb 28</strong>
+                <Calendar size={24} className="text-blue-500" />
+            </motion.div>
+
+            {/* Bell Icon */}
+            <motion.div
+                className="floating-icon bell"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+            >
+                <Bell size={24} className="text-yellow-500" />
             </motion.div>
         </div>
     );
