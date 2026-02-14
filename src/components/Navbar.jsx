@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Pill, Activity } from 'lucide-react';
+import { Menu, X, Pill, Activity, Sun, Moon } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
     const location = useLocation();
 
     const [activeSection, setActiveSection] = useState('home');
+
+    // Theme initialization and toggle
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    };
 
     // Check if we are on the landing page to apply specific styles
     const isLanding = location.pathname === '/';
@@ -97,6 +108,13 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-actions desktop-only">
+                    <button
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                    </button>
                     <Link to="/login" className="btn-nav btn-login">Login</Link>
                     <Link to="/signup" className="btn-nav btn-signup">Get Started</Link>
                 </div>
@@ -130,6 +148,13 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <div className="mobile-actions">
+                            <button
+                                className="theme-toggle mobile-theme-toggle"
+                                onClick={toggleTheme}
+                                aria-label="Toggle Theme"
+                            >
+                                {theme === 'light' ? <><Moon size={20} /><span>Dark Mode</span></> : <><Sun size={20} /><span>Light Mode</span></>}
+                            </button>
                             <Link to="/login" className="btn-nav btn-login full-width" onClick={() => setMobileMenuOpen(false)}>Login</Link>
                             <Link to="/signup" className="btn-nav btn-signup full-width" onClick={() => setMobileMenuOpen(false)}>Get Started</Link>
                         </div>

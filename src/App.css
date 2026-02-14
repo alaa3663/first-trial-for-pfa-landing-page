@@ -2,27 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.app-header {
-  height: 64px;
-  background: var(--bg-card);
-  border-bottom: 1px solid #e2e8f0;
-  display: flex;
-  align-items: center;
-  padding: 0 var(--spacing-lg);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.app-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .main-content {
