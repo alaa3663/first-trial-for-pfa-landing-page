@@ -51,6 +51,9 @@ const LandingPage = () => {
                     </div>
                 </div>
 
+                {/* Separator Effect */}
+                <div className="split-separator" />
+
                 {/* Right Side: Client */}
                 <div className="split-side client-side">
                     <LivingBackground theme="client" />
