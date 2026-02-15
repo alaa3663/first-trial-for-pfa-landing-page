@@ -345,16 +345,24 @@ p {
 /* Bridge Overlay */
 .bridge-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 50;
-    width: 60%;
     pointer-events: none;
 }
 
 .logo-container {
     text-align: center;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo-container h1 {
