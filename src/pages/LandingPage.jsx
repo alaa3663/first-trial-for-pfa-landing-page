@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PharmacyElements from '../components/3d/PharmacyElements';
 import ClientElements from '../components/3d/ClientElements';
@@ -12,14 +12,26 @@ import Footer from '../components/Footer';
 import './LandingPage.css';
 
 const LandingPage = () => {
+    const heroRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: heroRef,
+        offset: ["start start", "end start"]
+    });
+
+    // Transformations based on scroll
+    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.95]);
+    const y = useTransform(scrollYProgress, [0, 0.8], [0, -50]);
+    const bridgeOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
     return (
         <div className="landing-page-3d">
             <Navbar />
 
             {/* Hero Section */}
-            <div className="hero-section" id="home">
+            <div className="hero-section" id="home" ref={heroRef}>
                 {/* Background Particles */}
-                <div className="particles">
+                <motion.div className="particles" style={{ opacity }}>
                     {[...Array(20)].map((_, i) => (
                         <div key={i} className="particle" style={{
                             top: `${Math.random() * 100}%`,
@@ -27,10 +39,13 @@ const LandingPage = () => {
                             animationDelay: `${Math.random() * 5}s`
                         }}></div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Left Side: Pharmacy */}
-                <div className="split-side pharmacy-side">
+                <motion.div
+                    className="split-side pharmacy-side"
+                    style={{ opacity, scale, y }}
+                >
                     <LivingBackground theme="pharmacy" />
                     <div className="content-wrapper">
                         <motion.div
@@ -49,13 +64,16 @@ const LandingPage = () => {
                             <PharmacyElements />
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Separator Effect */}
-                <div className="split-separator" />
+                <motion.div className="split-separator" style={{ opacity }} />
 
                 {/* Right Side: Client */}
-                <div className="split-side client-side">
+                <motion.div
+                    className="split-side client-side"
+                    style={{ opacity, scale, y }}
+                >
                     <LivingBackground theme="client" />
                     <div className="content-wrapper">
                         <div className="visual-content">
@@ -74,10 +92,10 @@ const LandingPage = () => {
                             </Link>
                         </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Center Bridge Overlay */}
-                <div className="bridge-overlay">
+                <motion.div className="bridge-overlay" style={{ opacity: bridgeOpacity, scale }}>
                     <div className="logo-container">
                         <motion.h1
                             initial={{ scale: 0.8, opacity: 0 }}
@@ -88,7 +106,7 @@ const LandingPage = () => {
                         </motion.h1>
                         <DataStream />
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Content Sections */}

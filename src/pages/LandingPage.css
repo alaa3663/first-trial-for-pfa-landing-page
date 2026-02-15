@@ -16,8 +16,7 @@
     width: 100%;
     overflow: hidden;
     display: flex;
-    background: #000;
-    /* Keep hero dark for the split effect */
+    background: var(--bg-primary);
 }
 
 /* Split Sides - constrained to hero section */
