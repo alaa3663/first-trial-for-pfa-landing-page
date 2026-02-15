@@ -38,7 +38,7 @@ const PharmacyElements = () => {
             <motion.div
                 className="iso-badge"
                 animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
             >
                 <TrendingUp size={24} />
                 <span>+12% Revenue</span>

@@ -9,8 +9,22 @@ const ClientElements = () => {
             <motion.div
                 className="phone-mockup"
                 initial={{ rotateY: -15, rotateX: 5, y: 50, opacity: 0 }}
-                animate={{ rotateY: -5, rotateX: 0, y: 0, opacity: 1 }}
-                transition={{ duration: 1, type: "spring" }}
+                animate={{
+                    rotateY: -5,
+                    rotateX: 0,
+                    y: [0, -15, 0],
+                    opacity: 1
+                }}
+                transition={{
+                    rotateY: { duration: 1, type: "spring" },
+                    rotateX: { duration: 1, type: "spring" },
+                    opacity: { duration: 1 },
+                    y: {
+                        repeat: Infinity,
+                        duration: 6,
+                        ease: "easeInOut"
+                    }
+                }}
             >
                 <div className="phone-screen">
                     <div className="app-header">
