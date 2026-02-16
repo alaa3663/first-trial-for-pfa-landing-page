@@ -102,7 +102,7 @@ const LandingPage = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 1 }}
                         >
-                            PharmaConnect
+                            PharmaSeek
                         </motion.h1>
                         <DataStream />
                     </div>

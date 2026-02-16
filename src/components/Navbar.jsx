@@ -90,7 +90,7 @@ const Navbar = () => {
                     <div className="logo-icon">
                         <Activity size={24} />
                     </div>
-                    <span className="logo-text">PharmaConnect</span>
+                    <span className="logo-text">PharmaSeek</span>
                 </Link>
 
                 {/* Desktop Menu */}

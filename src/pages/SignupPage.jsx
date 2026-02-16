@@ -79,12 +79,37 @@ const SignupPage = () => {
                                 </div>
                             </div>
                         )}
+                        {role === 'pharmacy' && (
+                            <div className="form-group">
+                                <label>Adress</label>
+                                <div className="input-wrapper">
+                                    <Building size={18} className="input-icon" />
+                                    <input type="text" placeholder="123 Main Street, City" required />
+                                </div>
+                            </div>
+                        )}
+                        {role === 'patient' && (
+                            <div className="form-group">
+                                <label>CIN</label>
+                                <div className="input-wrapper">
+                                    <Building size={18} className="input-icon" />
+                                    <input type="text" placeholder="123 Main Street, City" required />
+                                </div>
+                            </div>
+                        )}
 
                         <div className="form-group">
                             <label>Email Address</label>
                             <div className="input-wrapper">
                                 <Mail size={18} className="input-icon" />
                                 <input type="email" placeholder="name@example.com" required />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label>Phone</label>
+                            <div className="input-wrapper">
+                                <Mail size={18} className="input-icon" />
+                                <input type="email" placeholder="xx-xxx-xxx" required />
                             </div>
                         </div>
 
