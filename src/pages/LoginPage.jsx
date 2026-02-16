@@ -35,22 +35,7 @@ const LoginPage = () => {
                         <p>Sign in to access your dashboard</p>
                     </div>
 
-                    <div className="role-selector">
-                        <button
-                            className={`role-btn ${role === 'patient' ? 'active' : ''}`}
-                            onClick={() => setRole('patient')}
-                        >
-                            <User size={18} />
-                            Patient
-                        </button>
-                        <button
-                            className={`role-btn ${role === 'pharmacy' ? 'active' : ''}`}
-                            onClick={() => setRole('pharmacy')}
-                        >
-                            <Stethoscope size={18} />
-                            Pharmacy
-                        </button>
-                    </div>
+
 
                     <form onSubmit={handleSubmit} className="auth-form">
                         <div className="form-group">
